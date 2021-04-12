@@ -1,0 +1,11 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*font-family: 'Kiwi Maru', serif !important;*/
+}
+
+.mybg{
+	/*clip-path: polygon(50% 0%, 79% 0, 100% 2%, 100% 99%, 79% 94%, 50% 100%, 20% 95%, 0 100%, 0 3%, 9% 0);*/
+	background-color: #62ebff;
+}
