@@ -6,16 +6,6 @@
             require '../admin/config/allPost.php';
             //$post = mysqli_fetch_array($query);
             while($posts = mysqli_fetch_array($query)){
-
-        // if ($post) {
-        //     out.println("<h3 class='display-5'> No Post Found This Category </h3>");
-        //     return;
-        // }
-        
-        // for (Post p : posts) {
-        //     if (p.getTitle().equals("")) {
-        //         continue;
-        //     }
     ?>
     <div class="col-md-6 mt-2">
 
