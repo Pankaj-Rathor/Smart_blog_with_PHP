@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -95,7 +98,7 @@
                 $("#submit-btn").hide();
 
                 $.ajax({
-                    url : "config/insert.php",
+                    url : "config/mailVerify.php",
                     type : 'POST',
                     data : {
                         'name': name,
@@ -108,8 +111,8 @@
                              $("#loader").hide();
                             $("#submit-btn").show();
                         if (data == true) {
-                           swal("Register Successfully", "", "success").then((value) => {
-                                    window.location = ("login.php");
+                           swal("Please Verify Your Email", "", "success").then((value) => {
+                                    window.location = ("verify.php");
                                 });
                             console.log(data);
                         } else {
