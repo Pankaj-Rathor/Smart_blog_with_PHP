@@ -1,11 +1,15 @@
 <?php
+session_start();
 include 'connection.php';
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $gender = $_POST['gender'];
-    $about = $_POST['about'];
+    $name = $_SESSION['name'];
+    $email = $_SESSION['email'];
+    $password = $_SESSION['password'];
+    $gender = $_SESSION['gender'];
+    $about = $_SESSION['about'];
+    $authcode = $_POST['authcode'];
+
+    if($_SESSION['otp']==$authcode){
 
     //Encrypt password
     $enc_pass = password_hash($password, PASSWORD_BCRYPT);
@@ -16,7 +20,6 @@ include 'connection.php';
          $insertQuery = "INSERT INTO `user` (`name`, `email`, `password`, `gender`, `about`) VALUES ('$name', '$email', '$enc_pass', '$gender', '$about')";
     }
    
-
     //Execute Query
     $res = mysqli_query($con, $insertQuery);
 
@@ -25,4 +28,8 @@ include 'connection.php';
     } else {
         echo false;
     }
-    
+    }else{
+        echo false;
+    }
+
+    ?>
